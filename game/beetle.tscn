@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_enemy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_beetle"]
+size = Vector2(54, 40)
+
+[node name="Beetle" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_enemy")
+max_health = 70.0
+knockback = Vector2(120, -80)
+stagger_time = 0.15
+patrol_speed = 40.0
+chase_speed = 80.0
+attack_range = 56.0
+attack_damage = 22.0
+windup_time = 0.6
+recover_time = 0.9
+attack_size = Vector2(56, 40)
+attack_offset = 40.0
+sheet_path = "res://art/beetle_sheet.png"
+body_size = Vector2(54, 40)
+feet_y = 29.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_beetle")
